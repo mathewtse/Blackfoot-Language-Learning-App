@@ -87,11 +87,14 @@ def move():
 ## Sound function ##
 
 def sound(english):
-    # modify the english word to make it the same as the files - underscore instead of spaces, etc etc
-    englishEdited = english.replace(" ", "_").replace("'","").strip("?.").replace(".","")
-    source = audio.play_file("sounds/" + englishEdited + ".wav")
-    source.paused = not source.paused
-
+    try:    
+        # modify the english word to make it the same as the files - underscore instead of spaces, etc etc
+        englishEdited = english.replace(" ", "_").replace("'","").strip("?.").replace(".","")
+        source = audio.play_file("sounds/" + englishEdited + ".wav")
+        source.paused = not source.paused
+    except:
+        print("currently unable to play audio due to replit bugs")
+        
 ## End of sound function ##
 
 
